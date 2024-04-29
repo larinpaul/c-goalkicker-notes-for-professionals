@@ -119,8 +119,27 @@ main()
 // and that this program will probably not compile
 // on most modern computers unless they are instructed to accept C90 code.
 
+// This very first example in the K&R book is not considered poor quality,
+// in part because it lacks an explicit returns type for main()
+// and in part because it lacks a return statement.
+// The 2nd edition of the book was written for the old C89 standard.
+// In C89, the type of main would default to int, but the K&R example does not return a defined value to the environment.
+// In C99 and later standards, the return type is required,
+// but it is safe to leave out the return statement of main (and only main),
+// because of a special case introduced with C99 5.1.2.2.3 -
+// it is equivalent to returning 0, which indicates success
+
+// The recommended and most portable form of main for hosted systems is int main (void)
+// when the program does not use any command line arguments,
+// or int main(int argc, char **argv) when the program does use the command line arguments.
 
 
+// C90 5.1.2.2.3. Program termination
+// A return from the initial call to the main functions is equivalent to calling the exit function
+// with the value returned by the main function as its argument...
 
+// C90 6.6.6.4 The return statement
+...
 
-
+// C99 5.1.2.2.3 Program termination
+// ...
