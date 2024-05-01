@@ -136,3 +136,4 @@ int main(void) {
 
 // Note that if the type is neither int nor double, a warning would be generated.
 // To eliminate the warning, you can add that type to the print(X) macro.
+
